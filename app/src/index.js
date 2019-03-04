@@ -46,9 +46,9 @@ const App = {
     const id = document.getElementById("cryptoStarIdForLookup").value;
 
     try {
-        const v = await lookUptokenIdToStarInfo(id).call();
-        const name = v[0].toString();
-        App.setStatus("CryptoStar name: " + name);
+        const starname = await lookUptokenIdToStarInfo(id).call();
+        const starnameToString = starname.toString();
+        App.setStatus("CryptoStar name: " + starnameToString);
     } catch(err) {
       console.log(err);
         App.setStatus('Unable to find CryptoStar: ' + id);
